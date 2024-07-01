@@ -8,56 +8,57 @@ import Link from "next/link";
 import { Button } from "../ui/button";
 
 // Icon imports
-import { Github, Twitter, Facebook } from "lucide-react";
+import { Github, Twitter, Facebook, MountainIcon, PhoneIcon, MailIcon } from "lucide-react";
 
 // Local component imports
 
 export default function Footer() {
   return (
-    <footer>
-      <section>
-        <div className="grid gap-6">
-          <div className="not-prose flex flex-col gap-6">
-            <Link href="/">
-              <h3 className="sr-only">brijr/components</h3>
-              {/* <Image
-                src={Logo}
-                alt="Logo"
-                width={120}
-                height={27.27}
-                className="transition-all hover:opacity-75 dark:invert"
-              ></Image> */}
-            </Link>
-            <p>
-                brijr/components is a collection of Next.js, React, Typescript
-                components for building landing pages and websites.
-            </p>
-          </div>
-          <div className="mb-4 flex flex-col gap-4 md:mb-0 md:flex-row">
-            <Link href="/privacy-policy">Privacy Policy</Link>
-            <Link href="/terms-of-service">Terms of Service</Link>
-            <Link href="/cookie-policy">Cookie Policy</Link>
-          </div>
+    <footer className=" mt-auto py-6 md:py-8">
+    <div className="container grid grid-cols-1 md:grid-cols-3 items-start justify-between gap-8">
+      <div className="grid gap-4">
+        <Link href="#" className="flex items-center gap-2" prefetch={false}>
+          <MountainIcon className="h-6 w-6" />
+          <span className="text-lg font-semibold">Creantiva.</span>
+        </Link>
+        <p className="text-sm text-muted-foreground">&copy; 2024 Creantiva. Todos los derechos son reservados.</p>
+      </div>
+      <nav className="grid gap-2">
+        <h3 className="text-lg font-semibold">Navegacion</h3>
+        <div className="grid gap-1">
+          <Link href="#" className="text-sm hover:underline" prefetch={false}>
+            Home
+          </Link>
+          <Link href="#" className="text-sm hover:underline" prefetch={false}>
+            About
+          </Link>
+          <Link href="#" className="text-sm hover:underline" prefetch={false}>
+            Products
+          </Link>
+          <Link href="#" className="text-sm hover:underline" prefetch={false}>
+            Contact
+          </Link>
         </div>
-        <div className="not-prose flex flex-col justify-between gap-6 border-t md:flex-row md:items-center md:gap-2">
-          <div className="flex gap-2">
-            <Button variant="outline" size="icon">
-              <Github />
-            </Button>
-            <Button variant="outline" size="icon">
-              <Twitter />
-            </Button>
-            <Button variant="outline" size="icon">
-              <Facebook />
-            </Button>
-          </div>
-          <p className="text-muted-foreground">
-            ©{" "}
-            <a href="https://github.com/brijr/components">brijr/components</a>.
-            All rights reserved. 2024-present.
-          </p>
+      </nav>
+      <div className="grid gap-4">
+        <h3 className="text-lg font-semibold">Additional Information</h3>
+        <p className="text-sm text-muted-foreground">
+          Creantiva. Estamos comprometidos a entregar el mejor servicio.
+        </p>
+        <div className="flex items-center gap-2">
+          <PhoneIcon className="h-4 w-4 text-muted-foreground" />
+          <a href="#" className="text-sm text-muted-foreground hover:underline">
+            +58 (300) 300-300
+          </a>
         </div>
-      </section>
-    </footer>
+        <div className="flex items-center gap-2">
+          <MailIcon className="h-4 w-4 text-muted-foreground" />
+          <a href="#" className="text-sm text-muted-foreground hover:underline">
+            info@creantiva.com
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
   );
 }
